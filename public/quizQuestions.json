@@ -1,0 +1,174 @@
+{
+  "quizzes": [
+    {
+      "name": "quiz o wojnie",
+      "questions": [
+        {
+          "id": 1,
+          "question": "23 sierpnia 1939 roku ZSRS i nazistowskie Niemcy podpisały pakt Ribbentrop-Mołotow, który przyczynił się do wybuchu II wojny światowej. Porozumienie między Hitlerem a Stalinem, będące formalnie traktatem o nieagresji, zawierało tajny protokół dotyczący:",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "opracowania przez ZSRS i III Rzeszę wspólnego modelu okrętu podwodnego",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "answer": "eksterminacji inteligencji w państwach Europy Środkowo-Wschodniej",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "answer": "podziału strefy wpływów w zaatakowanych państwach Europy pomiędzy ZSRS i III Rzeszę",
+              "correct": true
+            },
+            {
+              "id": 4,
+              "answer": "wymiany handlowej surowców niezbędnych dla przemysłu wojennego",
+              "correct": false
+            }
+          ],
+          "clarification": "Władze sowieckie przez lata zaprzeczały istnieniu tajnego protokołu.",
+          "clarificationUrl": "http://muzhp.pl/pl/e/74/pakt-ribbentropmolotow"
+        },
+        {
+          "id": 2,
+          "question": "Bezpośrednim następstwem niemiecko-sowieckiego paktu Ribbentrop-Mołotow była podwójna agresja na Polskę: od zachodu, a następnie od wschodu. Kiedy III Rzesza i ZSRS zaatakowały Polskę, rozpoczynając tym samym II wojnę światową?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "23 sierpnia i 1 września 1939",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "answer": "1 września i 17 września 1939",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "answer": "1 września i 3 września 1939",
+              "correct": true
+            },
+            {
+              "id": 4,
+              "answer": "3 września i 28 września 1939",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Kogo miał na myśli premier Wielkiej Brytanii Winston Churchill mówiąc w 1940 roku: Nigdy w historii wojen tak wielu nie zawdzięczało tak wiele tak niewielu?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "brytyjskich naukowców prowadzących badania nad bronią nuklearną",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "answer": "żołnierzy Legii Cudzoziemskiej walczących w bitwie o Narwik",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "answer": "generałów przygotowujących operację \"Torch\" w Afryce Północnej",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "answer": "lotników Royal Air Force walczących w bitwie powietrznej o Anglię",
+              "correct": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "quiz o wojnie 1",
+      "questions": [
+        {
+          "id": 1,
+          "question": "On 23 August 1939, the Soviet Union and Nazi Germany signed the Molotov-Ribbentrop Pact which paved the way for the outbreak of World War II. The Hitler-Stalin conspiracy, which formally was a non-aggression pact, had a secret protocol that covered:",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "A joint design of a submarine by the USSR and the Third Reich",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "answer": "Extermination of the intelligentsia in invaded countries",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "answer": "Division of the sphere of influence in the invaded countries between the USSR and the Third Reich",
+              "correct": true
+            },
+            {
+              "id": 4,
+              "answer": "Trading of raw materials essential for wartime industry",
+              "correct": false
+            }
+          ],
+          "clarification": "Władze sowieckie przez lata zaprzeczały istnieniu tajnego protokołu.",
+          "clarificationUrl": "http://muzhp.pl/pl/e/74/pakt-ribbentropmolotow"
+        },
+        {
+          "id": 2,
+          "question": "The direct consequence of German-Soviet pact signed by Molotov and Ribbentrop was a double assault on Poland, first from the west, then from the east. When did the Third Reich and the Soviet Union attack Poland, respectively, thereby starting World War II?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "23 August and 1 September 1939",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "answer": "1 September and 17 September 1939",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "answer": "1 September and 3 September 1939",
+              "correct": true
+            },
+            {
+              "id": 4,
+              "answer": "3 September and 28 September 1939",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Whom did the UK Prime Minister Winston Churchill refer to in 1940, saying: “Never in the field of human conflict was so much owed by so many to so few”?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "British scientists developing nuclear weapons",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "answer": "French Foreign Legionnaires fighting the Battle of Narvik",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "answer": "Generals mounting Operation Torch in northern Africa",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "answer": "RAF pilots fighting the Battle of Britain",
+              "correct": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
