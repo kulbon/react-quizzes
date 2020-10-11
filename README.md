@@ -1,4 +1,4 @@
-# React Quiz
+# React Quizzes
 
 [View demo](https://react-quizzes.netlify.app/)
 
