@@ -24,7 +24,7 @@ const RangeSelected = styled.div`
   background: green;
 `;
 
-const Range = ({ min, max, step, value }) => {
+const Range = ({ min, max, value }) => {
   return (
     <StyledContainer>
       <StyledRange>
@@ -39,8 +39,7 @@ const Range = ({ min, max, step, value }) => {
 Range.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
-  step: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default Range;

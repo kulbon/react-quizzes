@@ -2,6 +2,8 @@
   "quizzes": [
     {
       "name": "quiz o wojnie",
+      "url": "quiz-o-wojnie",
+      "lang": "pl",
       "questions": [
         {
           "id": 1,
@@ -87,6 +89,8 @@
     },
     {
       "name": "quiz o wojnie 1",
+      "url": "quiz-o-wojnie-1",
+      "lang": "en",
       "questions": [
         {
           "id": 1,

@@ -1,12 +1,21 @@
 import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
+import IntlProvider from 'react-intl/lib/src/components/provider';
 import Question from '../Question';
 import Result from '../Results';
 import { update, stateReducer } from '../../reducer/stateReducer';
 
-const Quiz = ({ questions, handleBackToList }) => {
+const Quiz = ({ quizzes, locale, ...props }) => {
+  const quizUrl = props.match.params.name;
+
+  const findQuizByUrl = () => {
+    return quizzes.find(quiz => quiz.url === quizUrl);
+  };
+
+  const quiz = findQuizByUrl();
+
   const [state, dispatch] = useReducer(stateReducer, {
-    quizQuestions: questions,
+    quizQuestions: quiz.questions,
     counter: 0,
     userAnswers: '',
     result: '',
@@ -46,6 +55,7 @@ const Quiz = ({ questions, handleBackToList }) => {
       })
     );
   };
+
   const renderQuestion = () => {
     return (
       state.quizQuestions && (
@@ -64,16 +74,20 @@ const Quiz = ({ questions, handleBackToList }) => {
       <Result
         quizQuestions={state.quizQuestions}
         userAnswers={state.userAnswers}
-        handleBackToList={handleBackToList}
       />
     );
   };
-  return state.result ? renderResult() : renderQuestion();
+
+  return (
+    <IntlProvider locale={quiz.lang} messages={locale[quiz.lang]}>
+      {state.result ? renderResult() : renderQuestion()}
+    </IntlProvider>
+  );
 };
 
 Quiz.propTypes = {
-  questions: PropTypes.array.isRequired,
-  handleBackToList: PropTypes.func,
+  quizzes: PropTypes.array.isRequired,
+  locale: PropTypes.object.isRequired,
 };
 
 export default Quiz;

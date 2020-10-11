@@ -1,34 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Quiz from '../Quiz';
 import QuizList from '../QuizList';
-import shuffleArray from '../../utils/shuffle';
 
-const Quizzes = () => {
-  const [quizzes, setQuizzes] = useState([]);
-  const [quiz, setQuiz] = useState(false);
-
-  useEffect(() => {
-    fetch(`quizQuestions.json`)
-      .then(r => r.json())
-      .then(data => {
-        setQuizzes(data.quizzes);
-      });
-  }, []);
-
-  const handleChosseQuiz = quiz => {
-    quiz.questions.map(question => {
-      return shuffleArray(question.answers);
-    });
-    setQuiz(quiz);
-  };
-
-  return quiz ? (
-    <Quiz questions={quiz.questions} handleBackToList={() => setQuiz(false)} />
-  ) : (
-    <QuizList quizzes={quizzes} handleClick={handleChosseQuiz} />
+const Quizzes = ({ quizzes, locale }) => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <QuizList quizzes={quizzes} />
+        </Route>
+        <Route
+          path="/:name"
+          render={props => (
+            <Quiz quizzes={quizzes} locale={locale} {...props} />
+          )}
+        />
+      </Switch>
+    </BrowserRouter>
   );
 };
 
-Quizzes.propTypes = {};
+Quizzes.propTypes = {
+  quizzes: PropTypes.array.isRequired,
+  locale: PropTypes.object.isRequired,
+};
 
 export default Quizzes;

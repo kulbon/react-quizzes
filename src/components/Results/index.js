@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Formattedmessage from 'react-intl/lib/src/components/message';
 import { CSSTransitionGroup } from 'react-transition-group';
 import ResultSummary from '../ResultSummary';
 import { countResult } from '../../utils/countResult';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const StyledResult = styled.div`
   position: relative;
@@ -12,7 +14,7 @@ const StyledResult = styled.div`
   border-radius: 3px;
   padding: 1.5rem;
 `;
-const StyledButton = styled.button`
+const StyledButton = styled(NavLink)`
   background: #a2a2a2;
   border: none;
   border-radius: 3px;
@@ -21,7 +23,8 @@ const StyledButton = styled.button`
   color: #fff;
 `;
 
-const Result = ({ quizQuestions, userAnswers, handleBackToList }) => {
+const Result = ({ quizQuestions, userAnswers }) => {
+  const userResult = countResult(quizQuestions, userAnswers);
   return (
     <CSSTransitionGroup
       component={StyledResult}
@@ -32,15 +35,15 @@ const Result = ({ quizQuestions, userAnswers, handleBackToList }) => {
       transitionAppearTimeout={500}
     >
       <h2>
-        Liczba zdobytych punktów to: {countResult(quizQuestions, userAnswers)}{' '}
-        na {quizQuestions.length}
+        <Formattedmessage id={'header.score'} /> {userResult}
+        <Formattedmessage id={'header.from'} />
+        {quizQuestions.length} (
+        {((userResult / quizQuestions.length) * 100).toFixed(0)}%)
       </h2>
       <ResultSummary quizQuestions={quizQuestions} userAnswers={userAnswers} />
-      {handleBackToList && (
-        <StyledButton onClick={() => handleBackToList()}>
-          ← Back to the list
-        </StyledButton>
-      )}
+      <StyledButton to={'/'}>
+        ← <Formattedmessage id={'header.back.to.list'} />{' '}
+      </StyledButton>
     </CSSTransitionGroup>
   );
 };
@@ -48,7 +51,6 @@ const Result = ({ quizQuestions, userAnswers, handleBackToList }) => {
 Result.propTypes = {
   quizQuestions: PropTypes.array.isRequired,
   userAnswers: PropTypes.array.isRequired,
-  handleBackToList: PropTypes.func,
 };
 
 export default Result;

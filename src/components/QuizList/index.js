@@ -1,10 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const StyledQuiz = styled.li`
+const StyledQuiz = styled(NavLink)`
   cursor: pointer;
   font-size: 2.4rem;
+  text-decoration: none;
 `;
 
 const StyledContainer = styled.div`
@@ -16,22 +18,23 @@ const StyledContainer = styled.div`
   padding: 1.5rem;
 `;
 
-const QuizList = ({ quizzes, handleClick }) => {
+const QuizList = ({ quizzes }) => {
   return (
     <StyledContainer>
       <h1>Choose a quiz:</h1>
-      {quizzes.map(quiz => (
-        <StyledQuiz key={quiz.name} onClick={() => handleClick(quiz)}>
-          {quiz.name}
-        </StyledQuiz>
-      ))}
+      <ul>
+        {quizzes.map(quiz => (
+          <li key={quiz.name}>
+            <StyledQuiz to={quiz.url}>{quiz.name}</StyledQuiz>
+          </li>
+        ))}
+      </ul>
     </StyledContainer>
   );
 };
 
 QuizList.propTypes = {
   quizzes: PropTypes.array.isRequired,
-  handleClick: PropTypes.func.isRequired,
 };
 
 export default QuizList;

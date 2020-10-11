@@ -1,0 +1,18 @@
+{
+  "en": {
+    "header.score": "Your score: ",
+    "header.from": "/",
+    "header.back.to.list": "back to the list",
+    "header.clarification": "Clarification:",
+    "header.correct.answer": "Correct answer:",
+    "header.user.answer": "Your answer:"
+  },
+  "pl": {
+    "header.score": "Twój wynik to:",
+    "header.from": "/",
+    "header.back.to.list": "Powrót na listę",
+    "header.clarification": "Uzasadnienie:",
+    "header.correct.answer": "Poprawna odpowiedź:",
+    "header.user.answer": "Twoja odpowiedź:"
+  }
+}

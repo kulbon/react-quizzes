@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import Formattedmessage from 'react-intl/lib/src/components/message';
 import { findUserAnswer, findCorrectAnswer } from '../../utils/countResult';
 
 const StyledQuestion = styled.div`
@@ -21,9 +22,13 @@ const ResultSummaryQuestion = ({ question, index, userAnswerId }) => {
       <h3>
         {++index}. {question.question}
       </h3>
-      <h4>Correct answer: </h4>
+      <h4>
+        <Formattedmessage id={'header.correct.answer'} />
+      </h4>
       <p>{correctAnswer.answer}</p>
-      <h4>Your answer:</h4>
+      <h4>
+        <Formattedmessage id={'header.user.answer'} />
+      </h4>
       <StyledUserAnswer
         correctAnswer={correctAnswer.id}
         userAnswer={userAnswer.id}
@@ -32,7 +37,9 @@ const ResultSummaryQuestion = ({ question, index, userAnswerId }) => {
       </StyledUserAnswer>
       {question.clarification && (
         <>
-          <h4>Clarification</h4>
+          <h4>
+            <Formattedmessage id={'header.clarification'} />
+          </h4>
           <p>
             {question.clarification}{' '}
             {question.clarificationUrl && (
