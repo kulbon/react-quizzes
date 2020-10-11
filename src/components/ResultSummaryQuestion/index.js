@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Formattedmessage from 'react-intl/lib/src/components/message';
-import { findUserAnswer, findCorrectAnswer } from '../../utils/countResult';
+import { findUserAnswer, findCorrectAnswer } from '../../utils/results';
 
 const StyledQuestion = styled.div`
   border-top: 1px solid #eee;

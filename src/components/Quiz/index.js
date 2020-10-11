@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import IntlProvider from 'react-intl/lib/src/components/provider';
 import Question from '../Question';
 import Result from '../Results';
-import { update, stateReducer } from '../../reducer/stateReducer';
+import {
+  increaseCounter,
+  addAnswear,
+  setCompleted,
+  stateReducer,
+} from '../../reducer/stateReducer';
 
 const Quiz = ({ quizzes, locale, ...props }) => {
   const quizUrl = props.match.params.name;
@@ -26,34 +31,20 @@ const Quiz = ({ quizzes, locale, ...props }) => {
     if (state.userAnswers.length < state.quizQuestions.length - 1) {
       setTimeout(() => setNextQuestion(), 300);
     } else {
-      setTimeout(() => setResults(), 300);
+      setTimeout(() => displayResults(), 300);
     }
   };
 
   const setUserAnswer = answer => {
-    dispatch(
-      update({
-        userAnswers: [...state.userAnswers, answer],
-      })
-    );
+    dispatch(addAnswear(answer));
   };
 
   const setNextQuestion = () => {
-    const counter = state.counter + 1;
-
-    dispatch(
-      update({
-        counter: counter,
-      })
-    );
+    dispatch(increaseCounter());
   };
 
-  const setResults = () => {
-    dispatch(
-      update({
-        result: true,
-      })
-    );
+  const displayResults = () => {
+    dispatch(setCompleted());
   };
 
   const renderQuestion = () => {

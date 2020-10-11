@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Formattedmessage from 'react-intl/lib/src/components/message';
 import { CSSTransitionGroup } from 'react-transition-group';
 import ResultSummary from '../ResultSummary';
-import { countResult } from '../../utils/countResult';
+import { countResult } from '../../utils/results';
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const StyledResult = styled.div`

@@ -1,5 +1,7 @@
 export const UPDATE = 'UPDATE';
-export const UPDATE_STATUSES = 'UPDATE_STATUSES';
+export const INCREASE_COUNTER = 'INCREASE_COUNTER';
+export const ADD_ANSWER = 'ADD_ANSWER';
+export const SET_COMPLETED = 'SET_COMPLETED';
 
 export const update = payload => {
   return {
@@ -7,10 +9,22 @@ export const update = payload => {
     payload: payload,
   };
 };
-export const updateStatuses = payload => {
+
+export const increaseCounter = () => {
   return {
-    type: UPDATE_STATUSES,
+    type: INCREASE_COUNTER,
+  };
+};
+export const addAnswear = payload => {
+  return {
+    type: ADD_ANSWER,
     payload: payload,
+  };
+};
+
+export const setCompleted = () => {
+  return {
+    type: SET_COMPLETED,
   };
 };
 
@@ -23,11 +37,23 @@ export const stateReducer = (state, action) => {
         ...data,
       };
     }
-    case UPDATE_STATUSES: {
-      const data = action.payload;
+    case INCREASE_COUNTER: {
       return {
         ...state,
-        statuses: [...state.statuses, data],
+        counter: state.counter + 1,
+      };
+    }
+    case ADD_ANSWER: {
+      const answer = action.payload;
+      return {
+        ...state,
+        userAnswers: [...state.userAnswers, answer],
+      };
+    }
+    case SET_COMPLETED: {
+      return {
+        ...state,
+        result: true,
       };
     }
     default:
